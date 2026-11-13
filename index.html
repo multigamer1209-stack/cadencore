@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Caden Core – Gaming Creator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{
+  --bg:#0a0a0a;--surface:#161616;--line:#262626;--text:#f5f5f5;--muted:#a3a3a3;--red:#e63946;--red-ink:#fff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bg:#f6f6f6;--surface:#fff;--line:#e2e2e2;--text:#111;--muted:#555;}
+}
+:root[data-theme="light"]{--bg:#f6f6f6;--surface:#fff;--line:#e2e2e2;--text:#111;--muted:#555;}
+:root[data-theme="dark"]{--bg:#0a0a0a;--surface:#161616;--line:#262626;--text:#f5f5f5;--muted:#a3a3a3;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;background:var(--bg);border-bottom:3px solid var(--red)}
+.brand{font-weight:800;letter-spacing:.04em}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{background:none;border:0;color:var(--muted);font:inherit;font-weight:600;padding:8px 12px;border-radius:999px;cursor:pointer}
+nav button[aria-current="true"]{background:var(--red);color:var(--red-ink)}
+nav button:focus-visible,.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+main{max-width:980px;margin:0 auto;padding:32px 20px 96px}
+section[hidden]{display:none}
+h1{font-size:clamp(2.6rem,9vw,5rem);line-height:1;margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,5vw,2.4rem);margin:0 0 6px}
+.sub{color:var(--red);font-weight:700;margin:0 0 24px}
+.lede{color:var(--muted);max-width:60ch}
+.hero{display:grid;gap:32px;align-items:center;grid-template-columns:1.3fr 1fr}
+.tagline{font-size:1.6rem;font-weight:800;line-height:1.25;margin:24px 0}
+.avatar{aspect-ratio:1;width:100%;max-width:300px;justify-self:center;border-radius:50%;border:6px solid var(--red);background:radial-gradient(circle at 50% 35%,#c1121f,#4a0007);display:grid;place-items:center;font-size:5rem;font-weight:900;color:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-weight:700;font-size:.85rem}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:14px;padding:18px}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.btn{display:inline-block;background:var(--red);color:var(--red-ink);font:inherit;font-weight:700;text-decoration:none;border:0;border-radius:12px;padding:12px 22px;cursor:pointer}
+.btn.off{background:var(--surface);color:var(--muted);border:1px dashed var(--line);cursor:default}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.note{color:var(--muted);font-size:.85rem;margin-top:20px}
+.channel{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.channel .avatar{max-width:140px;font-size:2.6rem}
+.handle{color:var(--red);font-weight:700}
+.center{text-align:center}
+.center .avatar{margin:0 auto 20px;max-width:180px;font-size:3.2rem}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.hero .avatar{order:-1;max-width:200px;font-size:3.5rem}}
+@media (prefers-reduced-motion:no-preference){section{animation:in .25s ease}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <span class="brand">CADEN CORE</span>
+  <nav id="nav" aria-label="Sections">
+    <button data-t="home">Home</button><button data-t="about">About</button><button data-t="content">Content</button><button data-t="watch">Watch</button><button data-t="community">Community</button>
+  </nav>
+</header>
+<main>
+<section id="home">
+  <div class="hero">
+    <div>
+      <h1>CADEN CORE</h1>
+      <p class="sub">Gaming creator portfolio</p>
+      <p class="tagline">Gaming.<br>Stories.<br>Challenges.</p>
+      <p class="lede">A creator profile showcasing gaming content, channel identity, and community links.</p>
+      <div class="chips"><span class="chip">GTA 5</span><span class="chip">Roblox</span><span class="chip">Gaming</span></div>
+      <div class="row"><a class="btn" id="yt1" target="_blank" rel="noopener">Watch on YouTube</a></div>
+    </div>
+    <div class="avatar" role="img" aria-label="Caden Core logo">CC</div>
+  </div>
+  <p class="note">Official creator profile · 2026 · Pakistan</p>
+</section>
+
+<section id="about" hidden>
+  <h2>Who is Caden Core?</h2>
+  <p class="sub">A gaming creator focused on entertainment, gameplay, and community.</p>
+  <p class="lede">I'm Caden Core, a gaming content creator from Pakistan. I create entertaining gaming videos featuring GTA 5, Roblox, challenges, funny moments, and exciting gaming experiences. My goal is to entertain viewers, build a strong gaming community, and share my gaming journey with everyone.</p>
+  <div class="grid">
+    <div class="card"><h3>Content style</h3><p>Gaming videos built around gameplay, experiments, challenges, and entertaining moments.</p></div>
+    <div class="card"><h3>Gaming interests</h3><p>GTA 5, Roblox, and other games that offer fun stories, creative ideas, and new experiences.</p></div>
+    <div class="card"><h3>Creator goal</h3><p>Grow a welcoming gaming community and keep creating videos that viewers enjoy.</p></div>
+  </div>
+</section>
+
+<section id="content" hidden>
+  <h2>The content</h2>
+  <p class="sub">A snapshot of the gaming themes on the channel.</p>
+  <div class="grid">
+    <div class="card"><h3>GTA 5</h3><p>Mods, gameplay stories, challenges, experiments, and entertaining moments from Los Santos.</p></div>
+    <div class="card"><h3>Roblox</h3><p>Exploring different experiences, horror games, adventures, challenges, and funny moments.</p></div>
+    <div class="card"><h3>Other games</h3><p>Trying new games, testing ideas, and sharing interesting gaming experiences.</p></div>
+  </div>
+  <div class="chips"><span class="chip">Gameplay</span><span class="chip">Challenges</span><span class="chip">Funny moments</span><span class="chip">Experiments</span><span class="chip">Gaming stories</span></div>
+  <div class="row"><a class="btn" id="yt2" target="_blank" rel="noopener">Explore YouTube videos</a></div>
+  <p class="note">Video examples are not shown here. Open the channel to see current public uploads.</p>
+</section>
+
+<section id="watch" hidden>
+  <h2>Watch the videos</h2>
+  <p class="sub">Visit the official channel for the latest uploads and featured gameplay.</p>
+  <div class="card channel">
+    <div class="avatar" role="img" aria-label="Caden Core logo">CC</div>
+    <div>
+      <h3 style="font-size:1.6rem">Caden Core</h3>
+      <p>Official YouTube channel for gaming videos, GTA 5, Roblox, challenges, and more.</p>
+      <p class="handle">@CadenCore1</p>
+      <div class="row"><a class="btn" id="yt3" target="_blank" rel="noopener">Open YouTube channel</a></div>
+    </div>
+  </div>
+  <p class="note">Subscriber and view totals are not shown because they could not be independently verified.</p>
+</section>
+
+<section id="community" hidden>
+  <h2>Join the community</h2>
+  <p class="sub">Follow the creator and connect through the official social channels.</p>
+  <div class="grid">
+    <div class="card"><h3>YouTube</h3><p>Watch uploads and explore the full gaming video library.</p><div class="row"><a class="btn" id="yt4" target="_blank" rel="noopener">YouTube</a></div></div>
+    <div class="card"><h3>Instagram</h3><p>Follow creator updates and social posts.</p><div class="row"><a class="btn" id="ig" target="_blank" rel="noopener">Instagram</a></div></div>
+    <div class="card"><h3>Discord</h3><p>Join the community and connect with other players.</p><div class="row"><a class="btn" id="dc" target="_blank" rel="noopener">Join Discord</a></div></div>
+  </div>
+  <div class="card" style="margin-top:24px">
+    <h3>Business and collaborations</h3>
+    <p>Open to suitable gaming collaborations, creator partnerships, and brand conversations. For inquiries, contact Caden Core through the social profiles above.</p>
+  </div>
+  <p class="center note" style="margin-top:40px">© 2026 Caden Core · Gaming creator portfolio</p>
+</section>
+</main>
+<script>
+// Edit these links. Leave empty to show a "link coming soon" button.
+var LINKS={
+  youtube:"https://www.youtube.com/@CadenCore1",
+  instagram:"",
+  discord:""
+};
+function setLink(id,url){var a=document.getElementById(id);if(!a)return;
+  if(url){a.href=url}else{a.classList.add("off");a.removeAttribute("href");a.textContent=a.textContent+" (link coming soon)"}}
+["yt1","yt2","yt3","yt4"].forEach(function(i){setLink(i,LINKS.youtube)});
+setLink("ig",LINKS.instagram);setLink("dc",LINKS.discord);
+var tabs=["home","about","content","watch","community"];
+function show(t){
+  if(tabs.indexOf(t)<0)t="home";
+  tabs.forEach(function(s){document.getElementById(s).hidden=(s!==t)});
+  document.querySelectorAll("#nav button").forEach(function(b){b.setAttribute("aria-current",b.dataset.t===t)});
+  window.scrollTo(0,0);
+}
+document.getElementById("nav").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;
+  try{history.replaceState(null,"","#"+b.dataset.t)}catch(x){}
+  show(b.dataset.t);
+});
+window.addEventListener("hashchange",function(){show(location.hash.slice(1))});
+show(location.hash.slice(1));
+</script>
+</body>
+</html>
